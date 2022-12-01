@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Transaction History
+{% endblock %}
+
+{% block main %}
+<div>
+    <h2>Transaction History</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Transaction ID</th>
+                <th>Stock Symbol</th>
+                <th>Price</th>
+                <th>Shares</th>
+                <th>Timestamp</th>
+                <th>Transaction Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in table_data %}
+                <tr>
+                    <th>{{ row["transaction_id"] }}</th>
+                    <th>{{ row["stock_symbol"] }}</th>
+                    <th>{{ row["price"] | usd }}</th>
+
+                    {% if row["nr_of_shares"] < 0 %}
+                        <th>{{ -row["nr_of_shares"] }}</th>
+                    {% else %}
+                        <th>{{ row["nr_of_shares"] }}</th>
+                    {% endif %}
+
+                    <th>{{ row["date"] }}</th>
+                    <th>{{ row["transaction_type"] }}</th>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

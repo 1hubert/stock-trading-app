@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Your Portfolio
+{% endblock %}
+
+{% block main %}
+<div class="container">
+    <h4 id="cash">Cash Balance: <br>{{ cash | usd }}</h4>
+    <h4 id="total">Grand Total: <br>{{ total | usd }}</h4>
+</div>
+
+<div>
+    <h2>Portfolio</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Stock</th>
+                <th>Shares Owned</th>
+                <th>Price</th>
+                <th>Total Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Loop through the database entries to display them in this table -->
+            {% for row in portfolio_data %}
+                <tr>
+                    <th>{{ row["stock"] }}</th>
+                    <th>{{ row["shares"] }}</th>
+                    <th>{{ row["price"] | usd }}</th>
+                    <th>{{ row["value"] | usd }}</th>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
