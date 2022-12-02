@@ -8,7 +8,7 @@ A simple stock trading app built in Python with Flask as part of CS50 course. Th
 - Trading history
 
 # Motivation
-I've wanted to learn basics of back-end development and Flask seemed like it wouldn't be too overwhelming.
+I've wanted to learn basics of back-end development and Flask seemed like a good start.
 
 # Configuration (Windows)
 1) Install dependencies with `pip install -r requirements.txt`.
