@@ -1,5 +1,5 @@
 # Simple Finance App
-A simple stock trading app built in Python with Flask as part of CS50 course. The money is fictional, but the available stocks and current stock prices are fetched from IEX Exchange using the IEX Cloud Legacy API.
+A simple stock trading app built in Python with Flask as part of the CS50 course. The money is fictional, but the available stocks and current stock prices are fetched from IEX Exchange using the IEX Cloud Legacy API.
 
 # Features
 - Register an account to get a 10,000$ of fictional money to trade
